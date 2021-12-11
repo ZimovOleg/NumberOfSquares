@@ -10,10 +10,9 @@ class SQRServiceTest {
 
     @ParameterizedTest
     @CsvSource(value = {"checking inside range limit, 200, 300, 3",
-            "checking under lower range limit, 100, 100, 1",
+            "checking under lower range limit, 100, 200, 5",
             "checking upper range limit, 300, 300, 0",
-            "checking over upper range limit, 400, 400, 1",
-            "checking all number limit, 100, 9801, 90"})
+            "checking over upper range limit, 400, 400, 1"})
     void calculate(String testName, int min, int max, int expected) {
         SQRService service = new SQRService();
 
