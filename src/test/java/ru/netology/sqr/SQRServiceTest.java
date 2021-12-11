@@ -14,10 +14,10 @@ class SQRServiceTest {
             "checking upper range limit, 300, 300, 0",
             "checking over upper range limit, 400, 400, 1",
             "checking all number limit, 100, 9801, 90"})
-       void calculate(String testName, int min, int max, int expected) {
+    void calculate(String testName, int min, int max, int expected) {
         SQRService service = new SQRService();
 
-int actual = service.calculate(min,max);
-assertEquals(expected, actual);
+        int actual = service.calculate(min, max);
+        assertEquals(expected, actual);
     }
 }
