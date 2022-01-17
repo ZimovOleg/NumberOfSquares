@@ -10,13 +10,15 @@ class SQRServiceTest {
 
     @ParameterizedTest
     @CsvSource(value = {"'checking inside range limit', 200, 300, 3",
-            "'checking over upper range limit', 400, 400, 1",
+            "'checking lower range limit', 200, 200, 0",
             "'checking under lower range limit', 100, 200, 5",
-            "'checking upper range limit', 300, 300, 0"})
-    void calculate(String test, int min, int max, int expected) {
+            "'checking upper range limit', 300, 300, 0",
+            "'checking all limit', 100, 10_000, 90"
+    })
+    void shoildNumberOfSquares(String test, int min, int max, int expected) {
         SQRService service = new SQRService();
 
-        int actual = service.calculate(min, max);
+        int actual = service.NumberOfSquares(min, max);
         assertEquals(expected, actual);
     }
 }
